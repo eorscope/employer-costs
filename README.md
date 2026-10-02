@@ -3,8 +3,10 @@
 Publisher: EOR Scope, published by Trésor Kaya EI (Les Créavores), France
 Licence: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 Methodology: https://eorscope.com/methodology/
+Calculator: https://eorscope.com/eor-cost-calculator/ (total monthly cost per provider, 1 to 50 employees)
+Country pages: https://eorscope.com/employer-of-record/
 Export date: 2026-10-02
-Source commit: 710c20b734e7
+Source commit: beb8c0690b44
 
 **Cost comparison, not legal or tax advice.** Figures are an illustrative model of statutory employer charges and published provider prices; check with the provider and a local adviser before hiring.
 
