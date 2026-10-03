@@ -6,7 +6,7 @@ Methodology: https://eorscope.com/methodology/
 Calculator: https://eorscope.com/eor-cost-calculator/ (total monthly cost per provider, 1 to 50 employees)
 Country pages: https://eorscope.com/employer-of-record/
 Export date: 2026-10-02
-Source commit: beb8c0690b44
+Source commit: 8260ea707af7
 
 **Cost comparison, not legal or tax advice.** Figures are an illustrative model of statutory employer charges and published provider prices; check with the provider and a local adviser before hiring.
 
@@ -26,6 +26,110 @@ Lines with `base = basic` apply to `basic_share_of_gross` × gross (`country_sum
 `employer_cost_pct` is not a social-security contribution rate. It adds statutory contributions, compulsory payments to private funds and statutory pay supplements (13th month, holiday pay, accrued severance), so it is not comparable with OECD Taxing Wages employer rates.
 
 The `notes` columns reproduce the site's prose and may refer to "this page".
+
+## Country pages
+
+Each country of `country_summary.csv` is printed on one page of eorscope.com, with its contribution lines, their sources and the provider fees on top:
+
+| ISO | Country | Page |
+|---|---|---|
+| AE | United Arab Emirates | https://eorscope.com/employer-of-record/uae/ |
+| AL | Albania | https://eorscope.com/employer-of-record/albania/ |
+| AM | Armenia | https://eorscope.com/employer-of-record/armenia/ |
+| AR | Argentina | https://eorscope.com/employer-of-record/argentina/ |
+| AT | Austria | https://eorscope.com/employer-of-record/austria/ |
+| AU | Australia | https://eorscope.com/employer-of-record/australia/ |
+| AZ | Azerbaijan | https://eorscope.com/employer-of-record/azerbaijan/ |
+| BD | Bangladesh | https://eorscope.com/employer-of-record/bangladesh/ |
+| BE | Belgium | https://eorscope.com/employer-of-record/belgium/ |
+| BG | Bulgaria | https://eorscope.com/employer-of-record/bulgaria/ |
+| BR | Brazil | https://eorscope.com/employer-of-record/brazil/ |
+| CA | Canada | https://eorscope.com/employer-of-record/canada/ |
+| CH | Switzerland | https://eorscope.com/employer-of-record/switzerland/ |
+| CL | Chile | https://eorscope.com/employer-of-record/chile/ |
+| CN | China | https://eorscope.com/employer-of-record/china/ |
+| CO | Colombia | https://eorscope.com/employer-of-record/colombia/ |
+| CR | Costa Rica | https://eorscope.com/employer-of-record/costa-rica/ |
+| CZ | Czech Republic | https://eorscope.com/employer-of-record/czech-republic/ |
+| DE | Germany | https://eorscope.com/employer-of-record/germany/ |
+| DK | Denmark | https://eorscope.com/employer-of-record/denmark/ |
+| DO | Dominican Republic | https://eorscope.com/employer-of-record/dominican-republic/ |
+| EC | Ecuador | https://eorscope.com/employer-of-record/ecuador/ |
+| EE | Estonia | https://eorscope.com/employer-of-record/estonia/ |
+| EG | Egypt | https://eorscope.com/employer-of-record/egypt/ |
+| ES | Spain | https://eorscope.com/employer-of-record/spain/ |
+| FI | Finland | https://eorscope.com/employer-of-record/finland/ |
+| FR | France | https://eorscope.com/employer-of-record/france/ |
+| GB | United Kingdom | https://eorscope.com/employer-of-record/uk/ |
+| GE | Georgia | https://eorscope.com/employer-of-record/georgia/ |
+| GH | Ghana | https://eorscope.com/employer-of-record/ghana/ |
+| GR | Greece | https://eorscope.com/employer-of-record/greece/ |
+| HK | Hong Kong | https://eorscope.com/employer-of-record/hong-kong/ |
+| HR | Croatia | https://eorscope.com/employer-of-record/croatia/ |
+| HU | Hungary | https://eorscope.com/employer-of-record/hungary/ |
+| ID | Indonesia | https://eorscope.com/employer-of-record/indonesia/ |
+| IE | Ireland | https://eorscope.com/employer-of-record/ireland/ |
+| IL | Israel | https://eorscope.com/employer-of-record/israel/ |
+| IN | India | https://eorscope.com/employer-of-record/india/ |
+| IT | Italy | https://eorscope.com/employer-of-record/italy/ |
+| JO | Jordan | https://eorscope.com/employer-of-record/jordan/ |
+| JP | Japan | https://eorscope.com/employer-of-record/japan/ |
+| KE | Kenya | https://eorscope.com/employer-of-record/kenya/ |
+| KR | South Korea | https://eorscope.com/employer-of-record/south-korea/ |
+| KZ | Kazakhstan | https://eorscope.com/employer-of-record/kazakhstan/ |
+| LK | Sri Lanka | https://eorscope.com/employer-of-record/sri-lanka/ |
+| LT | Lithuania | https://eorscope.com/employer-of-record/lithuania/ |
+| LV | Latvia | https://eorscope.com/employer-of-record/latvia/ |
+| MA | Morocco | https://eorscope.com/employer-of-record/morocco/ |
+| MM | Myanmar | https://eorscope.com/employer-of-record/myanmar/ |
+| MT | Malta | https://eorscope.com/employer-of-record/malta/ |
+| MX | Mexico | https://eorscope.com/employer-of-record/mexico/ |
+| MY | Malaysia | https://eorscope.com/employer-of-record/malaysia/ |
+| NG | Nigeria | https://eorscope.com/employer-of-record/nigeria/ |
+| NL | Netherlands | https://eorscope.com/employer-of-record/netherlands/ |
+| NO | Norway | https://eorscope.com/employer-of-record/norway/ |
+| NZ | New Zealand | https://eorscope.com/employer-of-record/new-zealand/ |
+| PE | Peru | https://eorscope.com/employer-of-record/peru/ |
+| PH | Philippines | https://eorscope.com/employer-of-record/philippines/ |
+| PK | Pakistan | https://eorscope.com/employer-of-record/pakistan/ |
+| PL | Poland | https://eorscope.com/employer-of-record/poland/ |
+| PT | Portugal | https://eorscope.com/employer-of-record/portugal/ |
+| QA | Qatar | https://eorscope.com/employer-of-record/qatar/ |
+| RO | Romania | https://eorscope.com/employer-of-record/romania/ |
+| RS | Serbia | https://eorscope.com/employer-of-record/serbia/ |
+| SA | Saudi Arabia | https://eorscope.com/employer-of-record/saudi-arabia/ |
+| SE | Sweden | https://eorscope.com/employer-of-record/sweden/ |
+| SG | Singapore | https://eorscope.com/employer-of-record/singapore/ |
+| SK | Slovakia | https://eorscope.com/employer-of-record/slovakia/ |
+| TH | Thailand | https://eorscope.com/employer-of-record/thailand/ |
+| TR | Turkey | https://eorscope.com/employer-of-record/turkey/ |
+| TW | Taiwan | https://eorscope.com/employer-of-record/taiwan/ |
+| UA | Ukraine | https://eorscope.com/employer-of-record/ukraine/ |
+| US | United States | https://eorscope.com/employer-of-record/united-states/ |
+| UY | Uruguay | https://eorscope.com/employer-of-record/uruguay/ |
+| VN | Vietnam | https://eorscope.com/employer-of-record/vietnam/ |
+| ZA | South Africa | https://eorscope.com/employer-of-record/south-africa/ |
+
+## Provider pages
+
+Each provider of `providers.csv` has one review page with the plans and prices listed in the file:
+
+| Provider | Page |
+|---|---|
+| Atlas HXM | https://eorscope.com/reviews/atlas/ |
+| Borderless AI | https://eorscope.com/reviews/borderless/ |
+| Deel | https://eorscope.com/reviews/deel/ |
+| G-P | https://eorscope.com/reviews/g-p/ |
+| Multiplier | https://eorscope.com/reviews/multiplier/ |
+| Oyster | https://eorscope.com/reviews/oyster/ |
+| Papaya Global | https://eorscope.com/reviews/papaya/ |
+| Pebl | https://eorscope.com/reviews/pebl/ |
+| Playroll | https://eorscope.com/reviews/playroll/ |
+| RemoFirst | https://eorscope.com/reviews/remofirst/ |
+| Remote | https://eorscope.com/reviews/remote/ |
+| Rippling | https://eorscope.com/reviews/rippling/ |
+| Rivermate | https://eorscope.com/reviews/rivermate/ |
+| Safeguard Global | https://eorscope.com/reviews/safeguard/ |
 
 ## Columns
 
