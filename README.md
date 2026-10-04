@@ -1,14 +1,14 @@
-# EOR Scope: employer costs and EOR provider prices
+# EOR Scope: statutory employer costs by country
 
 Publisher: EOR Scope, published by Trésor Kaya EI (Les Créavores), France
 Licence: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 Methodology: https://eorscope.com/methodology/
-Calculator: https://eorscope.com/eor-cost-calculator/ (total monthly cost per provider, 1 to 50 employees)
+Calculator: https://eorscope.com/eor-cost-calculator/ (total monthly cost, 1 to 50 employees)
 Country pages: https://eorscope.com/employer-of-record/
-Export date: 2026-10-02
-Source commit: 8260ea707af7
+Export date: 2026-10-04
+Source commit: 3261ce39a898
 
-**Cost comparison, not legal or tax advice.** Figures are an illustrative model of statutory employer charges and published provider prices; check with the provider and a local adviser before hiring.
+**Cost comparison, not legal or tax advice.** Figures are an illustrative model of statutory employer charges; check with a local adviser before hiring.
 
 ## Files
 
@@ -17,7 +17,7 @@ Source commit: 8260ea707af7
 | `country_contributions.csv` | 542 | One row per employer contribution or statutory extra, with rate, base, floor/ceiling, source URL and date |
 | `country_summary.csv` | 76 | One row per country: employer cost in % and USD per month at the example salary |
 | `country_assumptions.csv` | 108 | One row per declared assumption: the case each country's lines and total are priced for |
-| `providers.csv` | 35 | One row per provider and plan: monthly and annual prices, billing, deposit, add-ons, exclusions, source URL and date |
+| `datapackage.json` | | Frictionless Data Package descriptor (field types and descriptions) |
 
 `employer_cost_pct` is produced by the same engine that prints the figure on eorscope.com (statutory contributions plus the statutory extras flagged `in_total`, at the example salary; EOR fees excluded). `employer_cost_pct_printed` is the figure as the site prints it (one decimal, half away from zero: 22.25 prints 22.3). Countries flagged `total_declared_floor` publish an "at least" figure, not a total. Under `total_declared_ceiling` the modelled contribution base is the highest the law allows; costs listed with `in_total=false` come on top.
 
@@ -29,7 +29,7 @@ The `notes` columns reproduce the site's prose and may refer to "this page".
 
 ## Country pages
 
-Each country of `country_summary.csv` is printed on one page of eorscope.com, with its contribution lines, their sources and the provider fees on top:
+Each country of `country_summary.csv` is printed on one page of eorscope.com, with its contribution lines and their sources:
 
 | ISO | Country | Page |
 |---|---|---|
@@ -110,27 +110,6 @@ Each country of `country_summary.csv` is printed on one page of eorscope.com, wi
 | VN | Vietnam | https://eorscope.com/employer-of-record/vietnam/ |
 | ZA | South Africa | https://eorscope.com/employer-of-record/south-africa/ |
 
-## Provider pages
-
-Each provider of `providers.csv` has one review page with the plans and prices listed in the file:
-
-| Provider | Page |
-|---|---|
-| Atlas HXM | https://eorscope.com/reviews/atlas/ |
-| Borderless AI | https://eorscope.com/reviews/borderless/ |
-| Deel | https://eorscope.com/reviews/deel/ |
-| G-P | https://eorscope.com/reviews/g-p/ |
-| Multiplier | https://eorscope.com/reviews/multiplier/ |
-| Oyster | https://eorscope.com/reviews/oyster/ |
-| Papaya Global | https://eorscope.com/reviews/papaya/ |
-| Pebl | https://eorscope.com/reviews/pebl/ |
-| Playroll | https://eorscope.com/reviews/playroll/ |
-| RemoFirst | https://eorscope.com/reviews/remofirst/ |
-| Remote | https://eorscope.com/reviews/remote/ |
-| Rippling | https://eorscope.com/reviews/rippling/ |
-| Rivermate | https://eorscope.com/reviews/rivermate/ |
-| Safeguard Global | https://eorscope.com/reviews/safeguard/ |
-
 ## Columns
 
 ### `country_contributions.csv`
@@ -153,7 +132,7 @@ Each provider of `providers.csv` has one review page with the plans and prices l
 | `max_gross_annual_local` | number | Line applies only when annual gross is at most this, local currency |
 | `extra_kind` | string | Statutory extra: percent (of gross per year) / months (extra salary months) / days (paid days) |
 | `extra_value` | number | Statutory extra value in the unit given by extra_kind |
-| `secondary_source` | boolean | The line rests, in whole or in part, on a non-official source (declared in the notes, or the source URL is a provider page, a private legal portal or a firm's publication) |
+| `secondary_source` | boolean | The line rests, in whole or in part, on a non-official source (declared in the notes, or the source URL is a commercial page, a private legal portal or a firm's publication) |
 | `thirteenth_month` | boolean | The country mandates a 13th-month salary |
 | `total_declared_floor` | boolean | The country's employer cost is declared a floor (at least), not a total |
 | `total_declared_ceiling` | boolean | The modelled contribution base is the highest the law allows; costs listed with in_total=false come on top |
@@ -196,29 +175,6 @@ Each provider of `providers.csv` has one review page with the plans and prices l
 | `value` | number | Value the engine or the prose relies on (a share, a rate, a threshold, or 1 for a stated case) |
 | `notes` | string | Notes |
 
-### `providers.csv`
-
-| Column | Type | Description |
-|---|---|---|
-| `provider_id` | string | Provider identifier |
-| `provider` | string | Provider name |
-| `plan_id` | string | Plan identifier, unique within the provider |
-| `plan` | string | Plan name |
-| `scope` | string | eor / contractor / payroll / peo |
-| `pricing_model` | string | list (public flat price) / from (public starting price) / quote (not published) |
-| `price_usd_month` | number | Published price per person per month, USD |
-| `annual_price_usd_month` | number | Price per person per month on annual billing, USD |
-| `billing` | string | monthly / annual / either / unknown |
-| `min_term_months` | integer | Minimum term in months |
-| `deposit_policy` | string | Deposit policy as published |
-| `fx_markup_pct` | number | Published FX markup, percent |
-| `addons` | string | Add-ons, separated by ' / ' |
-| `countries_excluded` | string | Countries tracked by EOR Scope that the provider does not cover (ISO codes, ';'-separated) |
-| `notes` | string | Notes |
-| `source_name` | string | Source name |
-| `source_url` | string | Pricing page URL |
-| `checked_at` | date | Date the price was read |
-
 ## Suggested citation
 
-EOR Scope (2026). *EOR Scope: employer costs and EOR provider prices* (export 2026-10-02). EOR Scope, published by Trésor Kaya EI (Les Créavores), France. Licensed under CC BY 4.0. https://eorscope.com/methodology/
+EOR Scope (2026). *EOR Scope: statutory employer costs by country* (export 2026-10-04). EOR Scope, published by Trésor Kaya EI (Les Créavores), France. Licensed under CC BY 4.0. https://eorscope.com/methodology/
