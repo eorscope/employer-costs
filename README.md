@@ -5,8 +5,8 @@ Licence: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 Methodology: https://eorscope.com/methodology/
 Calculator: https://eorscope.com/eor-cost-calculator/ (total monthly cost, 1 to 50 employees)
 Country pages: https://eorscope.com/employer-of-record/
-Export date: 2026-10-04
-Source commit: 3261ce39a898
+Export date: 2026-10-11
+Source commit: 389c5df2aa9f
 
 **Cost comparison, not legal or tax advice.** Figures are an illustrative model of statutory employer charges; check with a local adviser before hiring.
 
@@ -14,7 +14,7 @@ Source commit: 3261ce39a898
 
 | File | Rows | Content |
 |---|---|---|
-| `country_contributions.csv` | 542 | One row per employer contribution or statutory extra, with rate, base, floor/ceiling, source URL and date |
+| `country_contributions.csv` | 543 | One row per employer contribution or statutory extra, with rate, base, floor/ceiling, source URL and date |
 | `country_summary.csv` | 76 | One row per country: employer cost in % and USD per month at the example salary |
 | `country_assumptions.csv` | 108 | One row per declared assumption: the case each country's lines and total are priced for |
 | `datapackage.json` | | Frictionless Data Package descriptor (field types and descriptions) |
@@ -123,14 +123,14 @@ Each country of `country_summary.csv` is printed on one page of eorscope.com, wi
 | `line_id` | string | Line identifier, unique within the country and line type |
 | `line_name` | string | Line name as published |
 | `rate` | number | Contribution: employer rate as a decimal (0.12 = 12%). Empty for statutory extras |
-| `base` | string | Contribution base: gross / basic (share of gross) / flat (fixed amount) / band (slice of gross between floor and cap) |
+| `base` | string | Contribution base: gross / basic (share of gross) / flat (fixed amount) / band (slice of gross between floor and cap). Percent statutory extras: gross / basic. Empty for months and days extras |
 | `base_factor` | number | Contribution: multiplier from gross to the statutory base, applied before floor and cap (1 = gross itself; Mexico's SBC integrates aguinaldo and vacation premium). Empty for flat lines and statutory extras |
 | `base_floor_annual_local` | number | Yearly floor on the contribution base, local currency |
 | `base_cap_annual_local` | number | Yearly ceiling on the contribution base, local currency |
 | `flat_annual_local` | number | Fixed yearly amount when base = flat, local currency |
 | `min_gross_annual_local` | number | Line applies only when annual gross is at least this, local currency |
 | `max_gross_annual_local` | number | Line applies only when annual gross is at most this, local currency |
-| `extra_kind` | string | Statutory extra: percent (of gross per year) / months (extra salary months) / days (paid days) |
+| `extra_kind` | string | Statutory extra: percent (of the base given in `base`, per year) / months (extra salary months) / days (paid days) |
 | `extra_value` | number | Statutory extra value in the unit given by extra_kind |
 | `secondary_source` | boolean | The line rests, in whole or in part, on a non-official source (declared in the notes, or the source URL is a commercial page, a private legal portal or a firm's publication) |
 | `thirteenth_month` | boolean | The country mandates a 13th-month salary |
@@ -177,4 +177,4 @@ Each country of `country_summary.csv` is printed on one page of eorscope.com, wi
 
 ## Suggested citation
 
-EOR Scope (2026). *EOR Scope: statutory employer costs by country* (export 2026-10-04). EOR Scope, published by Trésor Kaya EI (Les Créavores), France. Licensed under CC BY 4.0. https://eorscope.com/methodology/
+EOR Scope (2026). *EOR Scope: statutory employer costs by country* (export 2026-10-11). EOR Scope, published by Trésor Kaya EI (Les Créavores), France. Licensed under CC BY 4.0. https://eorscope.com/methodology/
