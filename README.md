@@ -5,8 +5,8 @@ Licence: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 Methodology: https://eorscope.com/methodology/
 Calculator: https://eorscope.com/eor-cost-calculator/ (total monthly cost, 1 to 50 employees)
 Country pages: https://eorscope.com/employer-of-record/
-Export date: 2026-10-12
-Source commit: ab83268e801f
+Export date: 2026-10-13
+Source commit: 4845ceeac645
 
 **Cost comparison, not legal or tax advice.** Figures are an illustrative model of statutory employer charges; check with a local adviser before hiring.
 
@@ -177,4 +177,4 @@ Each country of `country_summary.csv` is printed on one page of eorscope.com, wi
 
 ## Suggested citation
 
-EOR Scope (2026). *EOR Scope: statutory employer costs by country* (export 2026-10-12). EOR Scope, published by Trésor Kaya EI (Les Créavores), France. Licensed under CC BY 4.0. https://eorscope.com/methodology/
+EOR Scope (2026). *EOR Scope: statutory employer costs by country* (export 2026-10-13). EOR Scope, published by Trésor Kaya EI (Les Créavores), France. Licensed under CC BY 4.0. https://eorscope.com/methodology/
