@@ -2,6 +2,7 @@
 
 Publisher: EOR Scope, published by Trésor Kaya EI (Les Créavores), France
 Licence: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+Browse the data: https://eorscope.github.io/employer-costs/
 Methodology: https://eorscope.com/methodology/
 Calculator: https://eorscope.com/eor-cost-calculator/ (total monthly cost, 1 to 50 employees)
 Country pages: https://eorscope.com/employer-of-record/
