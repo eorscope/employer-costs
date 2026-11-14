@@ -6,8 +6,8 @@ Browse the data: https://eorscope.github.io/employer-costs/
 Methodology: https://eorscope.com/methodology/
 Calculator: https://eorscope.com/eor-cost-calculator/ (total monthly cost, 1 to 50 employees)
 Country pages: https://eorscope.com/employer-of-record/
-Export date: 2026-11-02
-Source commit: 5af172b3a8e9
+Export date: 2026-11-14
+Source commit: ac9c85e3547b
 
 **Cost comparison, not legal or tax advice.** Figures are an illustrative model of statutory employer charges; check with a local adviser before hiring.
 
@@ -30,7 +30,7 @@ EOR Scope data and code are also published in these places. Each copy is a snaps
 | `country_assumptions.csv` | 108 | One row per declared assumption: the case each country's lines and total are priced for |
 | `datapackage.json` | | Frictionless Data Package descriptor (field types and descriptions) |
 
-`employer_cost_pct` is produced by the same engine that prints the figure on eorscope.com (statutory contributions plus the statutory extras flagged `in_total`, at the example salary; EOR fees excluded). `employer_cost_pct_printed` is the figure as the site prints it (one decimal, half away from zero: 22.25 prints 22.3). Countries flagged `total_declared_floor` publish an "at least" figure, not a total. Under `total_declared_ceiling` the modelled contribution base is the highest the law allows; costs listed with `in_total=false` come on top.
+`employer_cost_pct` is produced by the same engine that prints the figure on eorscope.com (statutory contributions plus the statutory extras flagged `in_total`, at the example salary; EOR fees excluded). `employer_cost_pct_printed` is the figure as the site prints it (one decimal, half away from zero: 22.25 prints 22.3). Countries flagged `total_declared_floor` publish an "at least" figure, not a total. Under `total_declared_ceiling` the modelled contribution base is the highest the law allows; costs listed with `in_total=false` come on top. Where `total_bound_salary_rule` is set, the total depends on the salary as the site prints it: `at_least_above` = "at least" for a gross annual salary above `total_bound_salary_threshold_local` (Spain), `at_most_below` = "at most" below it (France); at the threshold itself, and on the other side, a total.
 
 Lines with `base = basic` apply to `basic_share_of_gross` × gross (`country_summary.csv`). `base_factor` multiplies gross into the statutory base before the floor and the ceiling apply (Mexico: the integrated contribution base includes the aguinaldo and the vacation premium). Each total holds for the case described in `country_assumptions.csv`.
 
@@ -175,6 +175,8 @@ Each country of `country_summary.csv` is printed on one page of eorscope.com, wi
 | `fx_local_per_usd` | number | Local currency units per 1 USD used for the conversion |
 | `fx_date` | date | Date of the exchange rate used (empty for USD) |
 | `last_reviewed` | date | Date the country data was last verified |
+| `total_bound_salary_threshold_local` | number | Gross annual salary, local currency, past which the total is a bound and not a total (empty when none); read with total_bound_salary_rule |
+| `total_bound_salary_rule` | string | at_least_above: above the threshold the total is a floor (Spain: solidarity contribution above the maximum base, not modelled) / at_most_below: below the threshold the total is a ceiling (France: RGDU relief under 3 x SMIC, not modelled); at the threshold itself, a total. Empty when none |
 
 ### `country_assumptions.csv`
 
@@ -188,4 +190,4 @@ Each country of `country_summary.csv` is printed on one page of eorscope.com, wi
 
 ## Suggested citation
 
-EOR Scope (2026). *EOR Scope: statutory employer costs by country* (export 2026-11-02). EOR Scope, published by Trésor Kaya EI (Les Créavores), France. Licensed under CC BY 4.0. https://eorscope.com/methodology/
+EOR Scope (2026). *EOR Scope: statutory employer costs by country* (export 2026-11-14). EOR Scope, published by Trésor Kaya EI (Les Créavores), France. Licensed under CC BY 4.0. https://eorscope.com/methodology/
